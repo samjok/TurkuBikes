@@ -1,3 +1,14 @@
+TurkuBikes
+version 0.01
+____________________
+Ohjelma hakee Turun kaupunkipyörien parkkitiedot ja listaa ne sivulle.
+
+
+
+____________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
