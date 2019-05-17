@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import Racks from './components/racks'
+import axios from 'axios';
 
-function App() {
+const App = () => {
+  const [bikes, setBikes] = useState([])
+
+  useEffect( () => {
+    axios
+    .get('http://data.foli.fi/citybike/smoove')
+    .then(response => {
+      setBikes(response.data)
+    })
+  }, [])
+
+  let result = []
+
+  if(Array.isArray(bikes.result)) {
+    result = bikes.result;
+  }  
+
+  const list = () => result.map(value => 
+    <Racks
+    key={value.name}
+    value={value}
+    />
+  )
+
+  console.log('result', result)
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Turun kaupunkipyörät</h1>
+      <div>
+        {list()}
+      </div>
     </div>
-  );
+  )
+  
 }
 
 export default App;
