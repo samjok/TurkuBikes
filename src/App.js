@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Racks from './components/racks'
-import axios from 'axios';
+import axios from 'axios';                                 
 
 const App = () => {
   const [bikes, setBikes] = useState([])
 
   useEffect( () => {
     axios
-    .get('http://data.foli.fi/citybike/smoove')
+    .get('http://data.foli.fi/citybike/smoove')  
     .then(response => {
       setBikes(response.data)
     })
