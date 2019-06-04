@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Racks from './components/racks'
+import Map from './components/map'
 import axios from 'axios';                                 
 
 const App = () => {
@@ -32,6 +33,9 @@ const App = () => {
   return (
     <div>
       <h1>Turun kaupunkipyörät</h1>
+      <div className='mapp'>
+        
+      </div>
       <div>
         {list()}
       </div>
