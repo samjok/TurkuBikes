@@ -34,7 +34,7 @@ const App = () => {
     <div>
       <h1>Turun kaupunkipyörät</h1>
       <div className='mapp'>
-        {Map()}
+        
       </div>
       <div>
         {list()}
